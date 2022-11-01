@@ -1,13 +1,12 @@
 import { connect } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { handleSaveQuestion } from "../actions/questions";
+import { handleSaveQuestion } from "../actions/shared";
 
 const Question = (props) => {
     const question = props.questions[props.id];
     const author = props.users[question.author].name;
 
     const handleSelection = (selectedOption) => {
-        console.log('selected',selectedOption)
         props.dispatch(handleSaveQuestion(question.id, selectedOption));
     }
 
@@ -19,9 +18,9 @@ const Question = (props) => {
             </div>
             <div>
                 <div>{question.optionOne.text}</div>
-                <button onClick={() => handleSelection(question.optionOne.text)}>Select</button>
+                <button onClick={() => handleSelection("optionOne")}>Select</button>
                 <div>{question.optionTwo.text}</div>
-                <button onClick={() => handleSelection(question.optionTwo.text)}>Select</button>
+                <button onClick={() => handleSelection("optionTwo")}>Select</button>
             </div>
             
         </div>
