@@ -11,10 +11,26 @@
 
 .nav li:last-child {
     margin-left: 1300px;
+    
+  }
+
+.user-detail {
+  display: flex;
+  align-items: center;
+  border: whitesmoke 1px solid;
+  border-radius: 10px;
+  }
+
+.profile-pic {
+    height: 60px;
   }
 
 li {
     list-style-type: none;
     padding: 10px;
     text-decoration: none;
+  }
+
+  nav {
+    border-bottom: 2px solid gray;
   }

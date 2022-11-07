@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import '../styling/Nav.css';
 import { logoutUser } from "../actions/authedUser";
 
-const Nav = ({ dispatch }) => {
+const Nav = ({ dispatch, authedUser, users }) => {
 
     const handleLogout = () => {
         dispatch(logoutUser());
@@ -21,16 +21,24 @@ const Nav = ({ dispatch }) => {
                         <Link to="/new">New</Link>
                     </li>
                     <li>
+                        <div className="user-detail">
+                            <img className="profile-pic" src={users[authedUser].avatarURL}/>
+                            {users[authedUser].name}
+                            
+                        </div>
                         <Link to="/" onClick={() => handleLogout()}>Log Out</Link>
+                        
                     </li>
             </ul>
         </nav>
     )
 };
 
-const mapStateToProps = ({ dispatch }) => {
+const mapStateToProps = ({ dispatch, authedUser, users }) => {
     return {
-        dispatch
+        dispatch,
+        authedUser,
+        users
     }
 }
 export default connect(mapStateToProps)(Nav);

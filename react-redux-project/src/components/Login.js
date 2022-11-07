@@ -22,7 +22,6 @@ const Login = (props) => {
     return (
         <div className="login">
             <h1>Employee Polls</h1>
-            <h3>Log In</h3>
             <form onSubmit={(e) => handleSubmit(e)} className="login-form">
                 <select name="cars" id="cars" value={username} onChange={(e) => handleUsername(e)}>
                     <option>Select a User</option>
@@ -32,7 +31,7 @@ const Login = (props) => {
                         ))
                     }
                 </select>
-                <button disabled={!username}>Submit</button>
+                <button disabled={!username} className="login-button">Log In</button>
             </form>
         </div>
     )

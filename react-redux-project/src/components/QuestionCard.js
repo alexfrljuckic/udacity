@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { formatDate } from "../utils/helper";
 import { useNavigate } from "react-router-dom";
+import "../styling/questionCard.css"
 
 const QuestionCard = ({ question, users }) => {
     const navigate = useNavigate();
@@ -10,14 +11,14 @@ const QuestionCard = ({ question, users }) => {
     }
     
     return (
-        <div>
-            <div>
-                <span>{users[question.author].name}</span>
-                <span>{formatDate(question.timestamp)}</span>
+        <div className="card">
+            <div className="card-header">
+                <h3>{users[question.author].name}</h3>
+                <p>{formatDate(question.timestamp)}</p>
             </div>
 
             <div>
-                <button onClick={() => handleClick()}>Show</button>
+                <button className="card-button" onClick={() => handleClick()}>Show</button>
             </div>
         </div>
     )

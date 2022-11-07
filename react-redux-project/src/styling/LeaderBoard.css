@@ -1,0 +1,10 @@
+img {
+    height: 100px;
+    border-radius: 10px;
+    padding-right: 10px;
+}
+
+.user-data {
+    display: flex;
+    align-items: center;
+}

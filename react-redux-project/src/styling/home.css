@@ -1,0 +1,11 @@
+.section {
+    border: 1px gray solid;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card-section {
+    display: flex;
+    align-items: center;
+}
