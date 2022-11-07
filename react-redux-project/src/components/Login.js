@@ -23,7 +23,7 @@ const Login = (props) => {
         <div className="login">
             <h1>Employee Polls</h1>
             <form onSubmit={(e) => handleSubmit(e)} className="login-form">
-                <select name="cars" id="cars" value={username} onChange={(e) => handleUsername(e)}>
+                <select name="cars" id="cars" value={username} onChange={(e) => handleUsername(e)} data-testid="user-input">
                     <option>Select a User</option>
                     {
                         Object.keys(props.users).map((userId) => (

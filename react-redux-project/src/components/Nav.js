@@ -23,7 +23,7 @@ const Nav = ({ dispatch, authedUser, users }) => {
                     <li>
                         <div className="user-detail">
                             <img className="profile-pic" src={users[authedUser].avatarURL}/>
-                            {users[authedUser].name}
+                            <span data-testid="nav-name">{users[authedUser].name}</span>
                             
                         </div>
                         <Link to="/" onClick={() => handleLogout()}>Log Out</Link>
