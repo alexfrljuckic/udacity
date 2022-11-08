@@ -1,16 +1,8 @@
 import { connect } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import Login from './Login';
+import {  Navigate } from "react-router-dom";
+
 function RequireAuth({ children, authedUser }) {
-    const navigate = useNavigate();
-    console.log(authedUser)
-    if(authedUser === null) {
-        navigate("/");
-        return <Login/>
-    }
-    else {
-        return children
-    }
+    return authedUser ? children : <Navigate to="/" replace />;
   }
 
   const mapStateToProps = ({ authedUser }) => {

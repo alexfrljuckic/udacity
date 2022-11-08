@@ -31,9 +31,9 @@ const App = (props) => {
         }
         <Routes>
             <Route path="/" exact element={<Login/>}/>
-            <Route path="/Home" element={<Home/>}/>
-            <Route path="/LeaderBoard" element={<LeaderBoard/>}/>
-            <Route path="/add" element={<NewQuestion/>}/>
+            <Route path="/Home" element={<RequireAuth><Home/></RequireAuth>}/>
+            <Route path="/LeaderBoard" element={<RequireAuth><LeaderBoard/></RequireAuth>}/>
+            <Route path="/add" element={<RequireAuth><NewQuestion/></RequireAuth>}/>
             <Route path="/questions/:id" element={<RequireAuth><Question/></RequireAuth>}/>
             <Route path="*" element={<ErrorPage/>}/>
         </Routes>
