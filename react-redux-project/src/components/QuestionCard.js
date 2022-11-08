@@ -7,7 +7,7 @@ const QuestionCard = ({ question, users }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(`/question/${question.id}`);
+        navigate(`/questions/${question.id}`);
     }
     
     return (

@@ -20,7 +20,7 @@ const Nav = ({ dispatch, authedUser, users }) => {
                         <Link to="/LeaderBoard" data-testid="LeaderBoard">LeaderBoard</Link>
                     </li>
                     <li>
-                        <Link to="/new" data-testid="newLink">New</Link>
+                        <Link to="/add" data-testid="newLink">New</Link>
                     </li>
                     <li>
                         <div className="user-detail">

@@ -1,40 +1,46 @@
 import { connect } from "react-redux";
+import { useState } from "react";
 import QuestionCard from "./QuestionCard";
-import { useNavigate } from "react-router-dom";
 import "../styling/home.css"
 
 const Home = ({ newQuestions, answeredQuestions }) => {
-    const navigate = useNavigate();/*
-    const currentUser = users[authedUser];
-    const answeredQuestionIds = Object.keys(currentUser.answers);
-    const newQuestions = Object.keys(questions).filter((qid) => !answeredQuestionIds.includes(qid)).map((qid) => questions[qid]);
-    const answeredQuestions = Object.keys(currentUser.answers).map((questionId) => questions[questionId]);*/
-    
+    const [showNew, setShowNew] = useState(true);
+
+    const handleToggle = () => {
+        setShowNew(!showNew)
+    }
+
+    const newQuestionSection = <div className="section">
+                                    <h1 className="col-md-2 mx-auto">New Questions</h1>
+                                        <div className="card-section">
+                                            {
+                                                newQuestions.map((question) => (
+                                                    <QuestionCard key={question.id} question={question}/>
+                                            ))
+                                        }
+                                        </div>
+                                    </div>
+    const answeredQuestionSection = <div className="section">
+                                        <h1 className="col-md-1 mx-auto">Done</h1>
+                                        <div className="card-section">
+                                        {
+                                            answeredQuestions.map((question) => (
+                                                <QuestionCard key={question.id} question={question}/>
+                                            ))
+                                        }
+                                        </div>
+                                    </div>
+
+    const displayedSection = showNew ? newQuestionSection : answeredQuestionSection;
+
     return (
-        <div>
-            <div className="section">
-                <h1 className="col-md-2 mx-auto">New Questions</h1>
-                <div className="card-section">
-
-                
-                {
-                    newQuestions.map((question) => (
-                        <QuestionCard key={question.id} question={question}/>
-                    ))
-                }
-                </div>
+        <div className="section">
+            <div>
+                <button className="toggle-button" onClick={() => handleToggle()}>Show {showNew ? "Answered Questions" : "New Questions"}</button>
             </div>
+            {displayedSection}
 
-            <div className="section">
-                <h1 className="col-md-1 mx-auto">Done</h1>
-                <div className="card-section">
-                {
-                    answeredQuestions.map((question) => (
-                        <QuestionCard key={question.id} question={question}/>
-                    ))
-                }
-                </div>
-            </div>
+            
         </div>
     )
 }

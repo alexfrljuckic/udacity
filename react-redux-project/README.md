@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Employee Polling
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a react-redux app as part of the Udacity course. This app allows for users to log in to their accounts and view polls created by other employees. An individual can see polls, create polls, and view themselves on a leadboard based on amount of questions answered and created. 
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### `npm start`
+### Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+All required npm libraries are listed in the package-lock.json running an npm install should automatically install all dependencies needed. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* [npm](https://nodejs.org/en/download/) - Installing Node
 
-### `npm test`
+### Installing
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Running npm install in your terminal
 
-### `npm run build`
+```
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Running the tests
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Jest tools should alread be installed after npm install so you can run the test start command
+```
+npm test
+```
+and then entering a to begin your test runs
+```
+Watch Usage
+ › Press a to run all tests.
+ › Press f to run only failed tests.
+ › Press q to quit watch mode.
+ › Press p to filter by a filename regex pattern.
+ › Press t to filter by a test name regex pattern.
+ › Press Enter to trigger a test run.
+ ```
+### Break down into end to end tests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+These tests consist of validating our _DATA.js file which acts as a mock API. As well as practicing with snapshot and event firing.
 
-### `npm run eject`
+```
+describe('getusers', () => {
+    it('go the users', async() => {
+        var l = 4;
+        var result = await _getUsers();
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+        expect(Object.keys(result).length).toEqual(l);
+    })
+})
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployment
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To start the project, run npm start in the terminal
+```
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Built With
 
-## Learn More
+* [React](https://reactjs.org/) - The web framework used
+* [Redux](https://redux.js.org/) - State management framework
+* [Jest](https://jestjs.io/docs/tutorial-react) - Testing framework
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Authors
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* **Alex Frljuckic** 
 
-### Code Splitting
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This project is distributed by Udacity [Udacity](https://www.udacity.com/)
 
-### Analyzing the Bundle Size
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Thanks to the Udacity reviewers

@@ -14,6 +14,8 @@ import { handleInitialData } from '../actions/shared';
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import ErrorPage from './ErrorPage';
+import RequireAuth from './RequireAuth';
 
 const App = (props) => {
   
@@ -28,11 +30,12 @@ const App = (props) => {
           props.authedUser && <Nav/>
         }
         <Routes>
-          <Route path="/" exact element={<Login/>}/>
-          <Route path="/Home" element={<Home/>}/>
-          <Route path="/LeaderBoard" element={<LeaderBoard/>}/>
-          <Route path="/new" element={<NewQuestion/>}/>
-          <Route path="/question/:id" element={<Question/>}/>
+            <Route path="/" exact element={<Login/>}/>
+            <Route path="/Home" element={<Home/>}/>
+            <Route path="/LeaderBoard" element={<LeaderBoard/>}/>
+            <Route path="/add" element={<NewQuestion/>}/>
+            <Route path="/questions/:id" element={<RequireAuth><Question/></RequireAuth>}/>
+            <Route path="*" element={<ErrorPage/>}/>
         </Routes>
       </div>
     </Fragment>
