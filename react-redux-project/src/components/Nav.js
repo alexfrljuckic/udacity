@@ -4,6 +4,8 @@ import '../styling/Nav.css';
 import { logoutUser } from "../actions/authedUser";
 
 const Nav = ({ dispatch, authedUser, users }) => {
+    const profilePic = users[authedUser]?.avatarURL;
+    const userName = users[authedUser]?.name;
 
     const handleLogout = () => {
         dispatch(logoutUser());
@@ -15,15 +17,15 @@ const Nav = ({ dispatch, authedUser, users }) => {
                         <Link to="/Home">Home</Link>
                     </li>
                     <li>
-                        <Link to="/LeaderBoard">LeaderBoard</Link>
+                        <Link to="/LeaderBoard" data-testid="LeaderBoard">LeaderBoard</Link>
                     </li>
                     <li>
                         <Link to="/new">New</Link>
                     </li>
                     <li>
                         <div className="user-detail">
-                            <img className="profile-pic" src={users[authedUser].avatarURL}/>
-                            <span data-testid="nav-name">{users[authedUser].name}</span>
+                            <img className="profile-pic" src={profilePic} alt=""/>
+                            <span data-testid="nav-name">{userName}</span>
                             
                         </div>
                         <Link to="/" onClick={() => handleLogout()}>Log Out</Link>

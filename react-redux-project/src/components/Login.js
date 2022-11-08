@@ -31,7 +31,7 @@ const Login = (props) => {
                         ))
                     }
                 </select>
-                <button disabled={!username} className="login-button">Log In</button>
+                <button disabled={!username} className="login-button" data-testid="login">Log In</button>
             </form>
         </div>
     )

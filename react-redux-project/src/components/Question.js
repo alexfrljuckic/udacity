@@ -13,7 +13,7 @@ const Question = (props) => {
 
     const currentUser = props.users[props.authedUser];
     const question = props.questions[props.id];
-    const author = props.users[question.author].name;
+    const author = props.users[question.author]?.name;
 
     useEffect(() => {
         const hasAnswered = (Object.keys(currentUser.answers).includes(props.id));

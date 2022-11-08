@@ -37,7 +37,7 @@ describe('_saveQuestion', () => {
         const emptyObject = {}
         await expect(_saveQuestion(emptyObject)).rejects.toEqual("Please provide optionOneText, optionTwoText, and author")
     })
- })
+ }) 
 
  describe('_saveQuestionAnswer', () => {
     jest.setTimeout(10000)
