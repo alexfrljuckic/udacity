@@ -40,7 +40,6 @@ describe('_saveQuestion', () => {
  }) 
 
  describe('_saveQuestionAnswer', () => {
-    jest.setTimeout(10000)
     it('successful save question answer', async() => {
         const testObj = {
             authedUser : "sarahedo",

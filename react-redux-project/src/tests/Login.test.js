@@ -10,17 +10,7 @@ const store = legacy_createStore(reducer,middleware);
 
 describe('can select user', () => {
     it('will select user', () => {
-        const authedUser = 'test';
-        const users = {
-            test : {
-                avatarURL : 'https://tylermcginnis.com/would-you-rather/sarah.jpg',
-                name: 'test'
-            }
-        }
-        const context = {
-            authedUser,
-            users
-        }
+        
         var cmp = render(
             <MemoryRouter>
                 <Provider store={store}>

@@ -1,5 +1,5 @@
-import { render } from "@testing-library/react";
-
+import { fireEvent, render, screen } from "@testing-library/react";
+import '@testing-library/jest-dom'
 import { Provider } from "react-redux";
 import { legacy_createStore } from "redux";
 import { MemoryRouter } from "react-router-dom";
@@ -18,5 +18,32 @@ describe('nav', () => {
             </MemoryRouter>
         )
         expect(cmp).toMatchSnapshot();
+    })
+})
+
+describe('nav to tabs', () => {
+
+    it('leaderboard', () => {
+        render(
+            <MemoryRouter>
+                <Provider store={store}>
+                        <Nav />
+                </Provider>
+            </MemoryRouter>
+        )
+        const leaderLink = screen.getByRole('link', { name : 'LeaderBoard' });
+        expect(leaderLink).toHaveAttribute('href','/LeaderBoard')
+    })
+
+    it('new', () => {
+        render(
+            <MemoryRouter>
+                <Provider store={store}>
+                        <Nav />
+                </Provider>
+            </MemoryRouter>
+        )
+        const newLink = screen.getByRole('link', { name : 'New' });
+        expect(newLink).toHaveAttribute('href','/new')
     })
 })

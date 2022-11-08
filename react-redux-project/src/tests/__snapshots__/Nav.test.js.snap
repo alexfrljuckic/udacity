@@ -26,6 +26,7 @@ Object {
           </li>
           <li>
             <a
+              data-testid="newLink"
               href="/new"
             >
               New
@@ -75,6 +76,7 @@ Object {
         </li>
         <li>
           <a
+            data-testid="newLink"
             href="/new"
           >
             New
